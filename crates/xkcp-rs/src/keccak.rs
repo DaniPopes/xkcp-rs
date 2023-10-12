@@ -2,9 +2,25 @@ use crate::{Error, Result};
 use core::mem::MaybeUninit;
 use ffi::Keccak_HashInstance;
 
+#[derive(Debug)]
 #[repr(align(8))]
 pub struct KeccakHash {
     inner: Keccak_HashInstance,
+}
+
+impl Clone for KeccakHash {
+    #[inline]
+    fn clone(&self) -> Self {
+        Self {
+            inner: Keccak_HashInstance {
+                sponge: ffi::KeccakWidth1600_SpongeInstanceStruct {
+                    ..self.inner.sponge
+                },
+                fixedOutputLength: self.inner.fixedOutputLength,
+                delimitedSuffix: self.inner.delimitedSuffix,
+            },
+        }
+    }
 }
 
 impl KeccakHash {

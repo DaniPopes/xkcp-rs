@@ -47,11 +47,11 @@ fn main() {
     cp_r(&xkcp_from, &xkcp);
 
     // build
-    let status = dbg!(Command::new("make")
+    let status = Command::new("make")
         .current_dir(&xkcp)
-        .arg(format!("{target}/libXKCP.a")))
-    .status()
-    .unwrap();
+        .arg(format!("{target}/libXKCP.a"))
+        .status()
+        .unwrap();
     if !status.success() {
         panic!("make failed");
     }
