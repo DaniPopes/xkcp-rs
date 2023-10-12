@@ -85,6 +85,7 @@ fn main() {
             non_exhaustive: false,
         })
         .layout_tests(false) // broken
+        .merge_extern_blocks(true)
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
@@ -105,7 +106,7 @@ fn cp_r(from: &Path, to: &Path) {
         return;
     }
 
-    fs::create_dir_all(&to).unwrap();
+    fs::create_dir_all(to).unwrap();
     for entry in from.read_dir().unwrap() {
         let entry = entry.unwrap();
         let path = entry.path();
