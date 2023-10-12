@@ -1,5 +1,9 @@
 [package]
 name = "xkcp-sys"
+description = "Native bindings to the XKCP library"
+keywords = ["xkcp", "keccak", "sha3", "asm", "crypto"]
+categories = ["algorithms", "cryptography", "external-ffi-bindings"]
+homepage = "https://github.com/DaniPopes/xkcp-rs/tree/master/crates/xkcp-sys"
 
 version.workspace = true
 edition.workspace = true

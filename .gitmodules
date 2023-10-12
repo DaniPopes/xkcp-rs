@@ -1,3 +1,5 @@
-[submodule "XKCP"]
-	path = XKCP
+[submodule "crates/xkcp-sys/XKCP"]
+	path = crates/xkcp-sys/XKCP
 	url = https://github.com/XKCP/XKCP.git
+	fetchRecurseSubmodules = true
+	shallow = true

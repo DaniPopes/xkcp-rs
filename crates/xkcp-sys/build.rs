@@ -40,26 +40,30 @@ fn main() {
     let root = PathBuf::from(env("CARGO_MANIFEST_DIR"));
     let out_dir = PathBuf::from(env("OUT_DIR"));
     let xkcp_from = root.join("XKCP");
-    let xkcp = out_dir.join("XKCP");
     rerun_if_changed(xkcp_from.to_str().unwrap());
+
+    // copy XKCP to OUT_DIR
+    let xkcp = out_dir.join("XKCP");
     cp_r(&xkcp_from, &xkcp);
 
-    let out = Command::new("make")
+    // build
+    let status = dbg!(Command::new("make")
         .current_dir(&xkcp)
-        .arg(format!("{target}/libXKCP.a"))
-        .output()
-        .unwrap();
-    if !out.status.success() {
+        .arg(format!("{target}/libXKCP.a")))
+    .status()
+    .unwrap();
+    if !status.success() {
         panic!("make failed");
     }
 
+    // link
     let xkcp_out = xkcp.join("bin").join(target);
-    let headers = xkcp_out.join("libXKCP.a.headers");
-
     println!("cargo:rustc-link-search={}", xkcp_out.display());
     println!("cargo:rustc-link-lib=static=XKCP");
 
+    // bindgen
     let mut builder = bindgen::builder();
+    let headers = xkcp_out.join("libXKCP.a.headers");
     for header in headers.read_dir().unwrap() {
         let path = header.unwrap().path();
         let stem = path.file_stem().unwrap().to_str().unwrap();
@@ -74,6 +78,7 @@ fn main() {
     }
     builder
         .formatter(bindgen::Formatter::Prettyplease)
+        .use_core()
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
