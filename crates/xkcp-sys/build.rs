@@ -5,6 +5,9 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn main() {
+    need_command("make", Some("need GNU make"));
+    need_command("xsltproc", Some("install xsltproc or libxslt"));
+
     let target_arch = env("CARGO_CFG_TARGET_ARCH");
     let target_features = env("CARGO_CFG_TARGET_FEATURE");
     let target_features = target_features.split(',').collect::<Vec<_>>();
@@ -70,7 +73,7 @@ fn main() {
         if stem.ends_with("-reference") {
             continue;
         }
-        // TODO: duplicate enumerators??
+        // TODO: duplicate enumerators?
         if stem.starts_with("Xoofff") {
             continue;
         }
@@ -117,6 +120,18 @@ fn cp_r(from: &Path, to: &Path) {
             cp_r(&path, &to);
         } else {
             fs::copy(&path, &to).unwrap();
+        }
+    }
+}
+
+fn need_command(s: &str, sugg: Option<&str>) {
+    match Command::new(s).output() {
+        Ok(_) => {}
+        Err(_) => {
+            panic!(
+                "command {s} not found{}",
+                sugg.map_or_else(String::new, |s| format!(": {s}"))
+            );
         }
     }
 }
