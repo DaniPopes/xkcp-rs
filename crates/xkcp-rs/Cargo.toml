@@ -1,0 +1,13 @@
+[package]
+name = "xkcp-rs"
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[dependencies]
+xkcp-sys.workspace = true

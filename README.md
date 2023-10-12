@@ -1,3 +1,3 @@
 # xkcp-rs
 
-Rust bindings for [XKCP]().
+Bindings and wrappers to the [eXtended Keccak Code Package (XKCP)](https://github.com/XKCP/XKCP) library.

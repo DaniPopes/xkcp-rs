@@ -1,9 +1,16 @@
-[package]
-name = "xkcp-rs"
+[workspace]
+members = ["crates/*"]
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
-exclude = [".gitmodules", "XKCP"]
+rust-version = "1.65"
+authors = ["DaniPopes <57450786+DaniPopes@users.noreply.github.com>"]
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/DaniPopes/xkcp-rs"
+repository = "https://github.com/DaniPopes/xkcp-rs"
+exclude = ["benches/", "tests/"]
 
-[build-dependencies]
-bindgen = "0.68"
-cc = "1"
+[workspace.dependencies]
+xkcp-rs = { version = "0.1.0", path = "crates/xkcp-rs" }
+xkcp-sys = { version = "0.1.0", path = "crates/xkcp-sys" }

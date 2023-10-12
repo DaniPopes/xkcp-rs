@@ -1,0 +1,14 @@
+[package]
+name = "xkcp-sys"
+
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+exclude.workspace = true
+
+[build-dependencies]
+bindgen = "0.68"
+cc = "1"
