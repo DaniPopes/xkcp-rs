@@ -4,7 +4,7 @@ use core::fmt;
 pub type Result<T, E = Error> = core::result::Result<T, E>;
 
 /// Keccak errors.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Error {
     /// Generic failure.
     Fail,
@@ -26,13 +26,23 @@ impl fmt::Display for Error {
 }
 
 impl Error {
-    /// Converts a raw Keccak return value into a [`Result`].
+    /// Converts a raw [`HashReturn`](ffi::HashReturn) value into a [`Result`].
     #[inline]
     pub fn from_raw(raw: ffi::HashReturn) -> Result<()> {
         match raw {
             ffi::HashReturn::KECCAK_SUCCESS => Ok(()),
             ffi::HashReturn::KECCAK_FAIL => Err(Error::OutputTooSmall),
             ffi::HashReturn::KECCAK_BAD_HASHLEN => Err(Error::OutputTooSmall),
+        }
+    }
+
+    /// Converts a raw integer return value into a [`Result`].
+    #[inline]
+    pub fn from_int(raw: i32) -> Result<()> {
+        if raw == 0 {
+            Ok(())
+        } else {
+            Err(Error::Fail)
         }
     }
 }

@@ -2,6 +2,7 @@ use crate::{Error, Result};
 use core::mem::MaybeUninit;
 use ffi::Keccak_HashInstance;
 
+/// Keccak hash function instance.
 #[derive(Debug)]
 #[repr(align(8))]
 pub struct KeccakHash {
@@ -16,8 +17,7 @@ impl Clone for KeccakHash {
                 sponge: ffi::KeccakWidth1600_SpongeInstanceStruct {
                     ..self.inner.sponge
                 },
-                fixedOutputLength: self.inner.fixedOutputLength,
-                delimitedSuffix: self.inner.delimitedSuffix,
+                ..self.inner
             },
         }
     }
@@ -156,6 +156,11 @@ mod tests {
             hash.update(x).unwrap();
             let mut out = [0u8; 32];
             hash.finalize(&mut out).unwrap();
+
+            let mut out2 = [0u8; 32];
+            crate::sha3_256(x, &mut out2);
+            assert_eq!(out2, out);
+
             out
         }
 
@@ -180,6 +185,11 @@ mod tests {
             hash.update(x).unwrap();
             let mut out = [0u8; 32];
             hash.finalize(&mut out).unwrap();
+
+            let mut out2 = [0u8; 32];
+            crate::keccak256(x, &mut out2);
+            assert_eq!(out2, out);
+
             out
         }
 
