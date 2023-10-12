@@ -13,5 +13,12 @@ license.workspace = true
 repository.workspace = true
 exclude.workspace = true
 
+[features]
+default = ["std"]
+std = []
+
 [dependencies]
 xkcp-sys.workspace = true
+
+[dev-dependencies]
+hex-literal = "0.4"

@@ -4,5 +4,6 @@
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case)]
 #![allow(improper_ctypes)] // u128 used for some reason
+#![no_std]
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));

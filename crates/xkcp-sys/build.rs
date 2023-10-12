@@ -79,6 +79,11 @@ fn main() {
     builder
         .formatter(bindgen::Formatter::Prettyplease)
         .use_core()
+        .derive_copy(false)
+        .size_t_is_usize(true)
+        .default_enum_style(bindgen::EnumVariation::Rust {
+            non_exhaustive: false,
+        })
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
