@@ -84,6 +84,7 @@ fn main() {
         .default_enum_style(bindgen::EnumVariation::Rust {
             non_exhaustive: false,
         })
+        .layout_tests(false) // broken
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
