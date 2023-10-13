@@ -89,6 +89,7 @@ fn main() {
         })
         .layout_tests(false) // broken
         .merge_extern_blocks(true)
+        .generate_cstr(true)
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
