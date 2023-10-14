@@ -82,7 +82,7 @@ fn main() {
 
     // copy XKCP to OUT_DIR
     let xkcp = out_dir.join("XKCP");
-    fs::remove_dir_all(&xkcp).unwrap();
+    let _ = fs::remove_dir_all(&xkcp);
     cp_r(&xkcp_from, &xkcp);
 
     // build
