@@ -9,7 +9,7 @@ fn main() {
     need_command("xsltproc", Some("install xsltproc or libxslt"));
 
     let target_arch = env("CARGO_CFG_TARGET_ARCH");
-    let target_features = env("CARGO_CFG_TARGET_FEATURE");
+    let target_features = env_opt("CARGO_CFG_TARGET_FEATURE").unwrap_or_default();
     let target_features = target_features.split(',').collect::<Vec<_>>();
     eprintln!("target features: {target_features:?}");
     let feature = |s: &str| target_features.iter().any(|&f| f == s);
