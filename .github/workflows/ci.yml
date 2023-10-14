@@ -20,24 +20,62 @@ jobs:
         rust: [stable]
         spec:
           - host: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            test: true
+          - host: ubuntu-latest
+            target: arm-unknown-linux-gnueabi
+            test: true
+          - host: ubuntu-latest
+            target: armv5te-unknown-linux-gnueabi
+            test: true
+          - host: ubuntu-latest
+            target: armv7-unknown-linux-gnueabihf
+            test: true
+          - host: ubuntu-latest
+            target: powerpc-unknown-linux-gnu
+            test: true
+          - host: ubuntu-latest
+            target: powerpc64-unknown-linux-gnu
+            test: true
+          - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             test: true
           - host: ubuntu-latest
-            target: aarch64-unknown-linux-gnu
+            target: i586-unknown-linux-gnu
             test: true
           - host: ubuntu-latest
             target: i686-unknown-linux-gnu
             test: true
+
+          - host: ubuntu-latest
+            target: aarch64-linux-android
+            test: true
+          - host: ubuntu-latest
+            target: arm-linux-androideabi
+            test: true
+          - host: ubuntu-latest
+            target: x86_64-linux-android
+            test: true
+
           - host: macos-latest
             target: x86_64-apple-darwin
             test: true
           - host: macos-latest
             target: aarch64-apple-darwin
+            test: true
+
+          - host: windows-latest
+            target: x86_64-pc-windows-msvc
+            test: true
+          - host: windows-latest
+            target: x86_64-pc-windows-gnu
+            test: true
+          - host: windows-latest
+            target: aarch64-pc-windows-msvc
             test: false
-          # TODO
-          # - host: windows-latest
-          #   target: x86_64-pc-windows-gnu
-          #   test: true
+          - host: windows-latest
+            target: i686-pc-windows-msvc
+            test: true
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,7 +85,6 @@ jobs:
           toolchain: ${{ matrix.rust }}
           target: ${{ matrix.spec.target }}
       - uses: taiki-e/setup-cross-toolchain-action@v1
-        if: ${{ matrix.spec.host == 'ubuntu-latest' }}
         with:
           target: ${{ matrix.spec.target }}
       - uses: Swatinem/rust-cache@v2
@@ -64,6 +101,7 @@ jobs:
             choco install xsltproc
           fi
       - name: build
+        if: ${{ !matrix.spec.test }}
         run: cargo build --workspace --target ${{ matrix.spec.target }} --all-targets -vv
       - name: test
         if: ${{ matrix.spec.test }}
