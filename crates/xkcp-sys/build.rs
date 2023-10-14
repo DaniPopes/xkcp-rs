@@ -82,6 +82,7 @@ fn main() {
 
     // copy XKCP to OUT_DIR
     let xkcp = out_dir.join("XKCP");
+    fs::remove_dir_all(&xkcp).unwrap();
     cp_r(&xkcp_from, &xkcp);
 
     // build
@@ -93,7 +94,7 @@ fn main() {
     let status = Command::new("make")
         .arg(format!("{xkcp_target}/libXKCP.a"))
         .current_dir(&xkcp)
-        .env("CC", cc.path())
+        .env("CC", cc.to_command().get_program())
         .env("CFLAGS", cc.cflags_env())
         .env("AR", ar.get_program())
         .status()
@@ -108,6 +109,7 @@ fn main() {
     println!("cargo:rustc-link-lib=static=XKCP");
 
     // bindgen
+    eprintln!("generating bindings");
     let mut builder = bindgen::builder();
     let headers = xkcp_out.join("libXKCP.a.headers");
     for header in headers.read_dir().unwrap() {
@@ -120,9 +122,10 @@ fn main() {
         if stem.starts_with("Xoofff") {
             continue;
         }
-        builder = builder.header(path.to_str().unwrap());
+        let path = path.to_str().unwrap();
+        builder = builder.header(path).allowlist_file(path);
     }
-    builder
+    builder = builder
         .formatter(bindgen::Formatter::Prettyplease)
         .use_core()
         .derive_copy(false)
@@ -130,9 +133,12 @@ fn main() {
         .default_enum_style(bindgen::EnumVariation::Rust {
             non_exhaustive: false,
         })
-        .layout_tests(false) // broken
+        .layout_tests(false)
         .merge_extern_blocks(true)
         .generate_cstr(true)
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks));
+
+    builder
         .generate()
         .unwrap()
         .write_to_file(out_dir.join("bindings.rs"))
