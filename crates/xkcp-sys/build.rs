@@ -86,9 +86,16 @@ fn main() {
 
     // build
     eprintln!("final XKCP target: {xkcp_target:?}");
+    patch_makefiles(&xkcp);
+    let build = cc::Build::new();
+    let cc = build.get_compiler();
+    let ar = build.get_archiver();
     let status = Command::new("make")
-        .current_dir(&xkcp)
         .arg(format!("{xkcp_target}/libXKCP.a"))
+        .current_dir(&xkcp)
+        .env("CC", cc.path())
+        .env("CFLAGS", cc.cflags_env())
+        .env("AR", ar.get_program())
         .status()
         .unwrap();
     if !status.success() {
@@ -148,6 +155,9 @@ fn env_opt(s: &str) -> Result<String, env::VarError> {
 }
 
 fn cp_r(from: &Path, to: &Path) {
+    if from.to_str().unwrap().ends_with("XKCP/bin") {
+        return;
+    }
     if to.file_name() == Some(".git".as_ref()) {
         return;
     }
@@ -177,4 +187,25 @@ fn need_command(s: &str, sugg: Option<&str>) {
             );
         }
     }
+}
+
+/// Patches Makefiles to not unconditionaly enable optimizations.
+fn patch_makefiles(xkcp: &Path) {
+    eprintln!("out dir {}", xkcp.display());
+    let low_level_build = xkcp.join("lib/LowLevel.build");
+    let mut contents = fs::read_to_string(&low_level_build).unwrap();
+
+    const TO_REMOVE: &[&str] = &[
+        "<gcc>-fomit-frame-pointer</gcc>",
+        "<gcc>-O2</gcc>",
+        "<gcc>-g0</gcc>",
+        "<gcc>-march=native</gcc>",
+        "<gcc>-mtune=native</gcc>",
+    ];
+    for &to_remove in TO_REMOVE {
+        contents.find(to_remove).unwrap();
+        contents = contents.replace(to_remove, "");
+    }
+
+    fs::write(low_level_build, contents).unwrap();
 }
