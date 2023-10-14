@@ -84,6 +84,7 @@ fn main() {
     let xkcp = out_dir.join("XKCP");
     let _ = fs::remove_dir_all(&xkcp);
     cp_r(&xkcp_from, &xkcp);
+    eprintln!("out dir {}", xkcp.display());
 
     // build
     eprintln!("final XKCP target: {xkcp_target:?}");
@@ -135,8 +136,7 @@ fn main() {
         })
         .layout_tests(false)
         .merge_extern_blocks(true)
-        .generate_cstr(true)
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks));
+        .generate_cstr(true);
 
     builder
         .generate()
@@ -197,19 +197,17 @@ fn need_command(s: &str, sugg: Option<&str>) {
 
 /// Patches Makefiles to not unconditionaly enable optimizations.
 fn patch_makefiles(xkcp: &Path) {
-    eprintln!("out dir {}", xkcp.display());
     let low_level_build = xkcp.join("lib/LowLevel.build");
     let mut contents = fs::read_to_string(&low_level_build).unwrap();
 
     const TO_REMOVE: &[&str] = &[
-        "<gcc>-fomit-frame-pointer</gcc>",
+        "<gcc>-O</gcc>",
         "<gcc>-O2</gcc>",
         "<gcc>-g0</gcc>",
         "<gcc>-march=native</gcc>",
         "<gcc>-mtune=native</gcc>",
     ];
     for &to_remove in TO_REMOVE {
-        contents.find(to_remove).unwrap();
         contents = contents.replace(to_remove, "");
     }
 
