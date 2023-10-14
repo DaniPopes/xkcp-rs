@@ -4,7 +4,17 @@ description = "Native bindings to the XKCP library"
 keywords = ["xkcp", "keccak", "sha3", "asm", "crypto"]
 categories = ["algorithms", "cryptography", "external-ffi-bindings"]
 homepage = "https://github.com/DaniPopes/xkcp-rs/tree/master/crates/xkcp-sys"
-exclude = ["XKCP/doc", "XKCP/tests", "!XKCP/**/*.build"]
+include = [
+    "/src/",
+    "/XKCP/**/*.build",
+    "!/XKCP/bin/.build/",
+    "/XKCP/lib/",
+    "/XKCP/support/XKCBuild/src/",
+    "/XKCP/Makefile",
+    "/build.rs",
+    "/LICENSE",
+    "/README.md",
+]
 
 version.workspace = true
 edition.workspace = true
