@@ -52,8 +52,8 @@ jobs:
         run: |
           if [ ${{ matrix.spec.host }} == "ubuntu-latest" ]; then
             sudo apt-get install xsltproc
-            [ ${{ matrix.spec.target == "aarch64-unknown-linux-gnu" }}] && sudo apt-get install gcc-aarch64-linux-gnu
-            [ ${{ matrix.spec.target == "i686-unknown-linux-gnu" }}] && sudo apt-get install gcc-multilib
+            [ ${{ matrix.spec.target }} == "aarch64-unknown-linux-gnu" ] && sudo apt-get install gcc-aarch64-linux-gnu
+            [ ${{ matrix.spec.target }} == "i686-unknown-linux-gnu" ] && sudo apt-get install gcc-multilib
           elif [ ${{ matrix.spec.host }} == "macos-latest" ]; then
             brew install libxslt
           else
