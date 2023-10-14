@@ -21,18 +21,23 @@ jobs:
         spec:
           - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
+            test: true
           - host: ubuntu-latest
             target: aarch64-unknown-linux-gnu
+            test: true
           - host: ubuntu-latest
             target: i686-unknown-linux-gnu
+            test: true
           - host: macos-latest
             target: x86_64-apple-darwin
+            test: true
           - host: macos-latest
             target: aarch64-apple-darwin
             test: false
           # TODO
           # - host: windows-latest
           #   target: x86_64-pc-windows-gnu
+          #   test: true
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,7 +47,7 @@ jobs:
           toolchain: ${{ matrix.rust }}
           target: ${{ matrix.spec.target }}
       - uses: taiki-e/setup-cross-toolchain-action@v1
-        if: ${{ matrix.host == 'ubuntu-latest' }}
+        if: ${{ matrix.spec.host == 'ubuntu-latest' }}
         with:
           target: ${{ matrix.spec.target }}
       - uses: Swatinem/rust-cache@v2
