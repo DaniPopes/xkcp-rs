@@ -11,6 +11,7 @@ fn main() {
     let target_arch = env("CARGO_CFG_TARGET_ARCH");
     let target_features = env("CARGO_CFG_TARGET_FEATURE");
     let target_features = target_features.split(',').collect::<Vec<_>>();
+    eprintln!("target features: {target_features:?}");
     let feature = |s: &str| target_features.iter().any(|&f| f == s);
     let mut xkcp_target = match target_arch.as_str() {
         "x86_64" => {
@@ -33,7 +34,7 @@ fn main() {
         "avr" => "AVR8",
         _ => "compact",
     };
-    eprintln!("initial XKCP target {xkcp_target:?}");
+    eprintln!("initial XKCP target: {xkcp_target:?}");
 
     if cfg!(feature = "avr8") {
         eprintln!("AVR8 XKCP target forced");
@@ -84,7 +85,7 @@ fn main() {
     cp_r(&xkcp_from, &xkcp);
 
     // build
-    eprintln!("final XKCP target selected: {xkcp_target:?}");
+    eprintln!("final XKCP target: {xkcp_target:?}");
     let status = Command::new("make")
         .current_dir(&xkcp)
         .arg(format!("{xkcp_target}/libXKCP.a"))

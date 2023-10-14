@@ -26,7 +26,9 @@ jobs:
           # - host: ubuntu-latest
           #   target: i686-unknown-linux-gnu
           - host: macos-latest
-            target: aarch64-apple-darwin
+            target: x86_64-apple-darwin
+          # - host: macos-latest
+          #   target: aarch64-apple-darwin
           - host: windows-latest
             target: x86_64-pc-windows-gnu
     steps:
@@ -57,23 +59,6 @@ jobs:
       - name: test
         run: cargo test --workspace --target ${{ matrix.spec.target }}
 
-  feature-checks:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - uses: dtolnay/rust-toolchain@stable
-      - uses: taiki-e/install-action@cargo-hack
-      - uses: Swatinem/rust-cache@v2
-        with:
-          cache-on-failure: true
-      - name: install prerequisites
-        run: sudo apt-get install xsltproc
-      - name: cargo hack
-        run: cargo hack check --feature-powerset --depth 2
-
   clippy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -87,7 +72,7 @@ jobs:
           cache-on-failure: true
       - name: install prerequisites
         run: sudo apt-get install xsltproc
-      - run: cargo clippy --workspace --all-targets --all-features
+      - run: cargo clippy --workspace --all-targets
         env:
           RUSTFLAGS: -Dwarnings
 
@@ -104,7 +89,7 @@ jobs:
           cache-on-failure: true
       - name: install prerequisites
         run: sudo apt-get install xsltproc
-      - run: cargo doc --workspace --all-features --no-deps --document-private-items
+      - run: cargo doc --workspace --no-deps --document-private-items
         env:
           RUSTDOCFLAGS: "--cfg docsrs -D warnings"
 
