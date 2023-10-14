@@ -11,5 +11,5 @@ license = "CC0-1.0"
 repository = "https://github.com/DaniPopes/xkcp-rs"
 
 [workspace.dependencies]
-xkcp-rs = { version = "0.0.1", path = "crates/xkcp-rs" }
-xkcp-sys = { version = "0.0.1", path = "crates/xkcp-sys" }
+xkcp-rs = { version = "=0.0.1", path = "crates/xkcp-rs" }
+xkcp-sys = { version = "=0.0.1", path = "crates/xkcp-sys" }
