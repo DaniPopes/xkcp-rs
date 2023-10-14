@@ -50,11 +50,14 @@ jobs:
       - name: install prerequisites
         shell: bash
         run: |
-          if [ ${{ matrix.spec.host }} == "ubuntu-latest" ]; then
-            sudo apt-get install xsltproc
-            [ ${{ matrix.spec.target }} == "aarch64-unknown-linux-gnu" ] && sudo apt-get install gcc-aarch64-linux-gnu
-            [ ${{ matrix.spec.target }} == "i686-unknown-linux-gnu" ] && sudo apt-get install gcc-multilib
-          elif [ ${{ matrix.spec.host }} == "macos-latest" ]; then
+          if [ "${{ matrix.spec.host }}" == "ubuntu-latest" ]; then
+            sudo apt-get update
+            sudo apt-get upgrade
+            list=(xsltproc)
+            [ "${{ matrix.spec.target }}" == "aarch64-unknown-linux-gnu" ] && list+=(gcc-aarch64-linux-gnu)
+            [ "${{ matrix.spec.target }}" == "i686-unknown-linux-gnu" ] && list+=(gcc-multilib)
+            sudo apt-get install "${list[@]}"
+          elif [ "${{ matrix.spec.host }}" == "macos-latest" ]; then
             brew install libxslt
           else
             choco install xsltproc
