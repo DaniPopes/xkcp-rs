@@ -12,7 +12,7 @@ fn main() {
     let target_features = env("CARGO_CFG_TARGET_FEATURE");
     let target_features = target_features.split(',').collect::<Vec<_>>();
     let feature = |s: &str| target_features.iter().any(|&f| f == s);
-    let target = match target_arch.as_str() {
+    let mut xkcp_target = match target_arch.as_str() {
         "x86_64" => {
             if feature("avx512f") {
                 "AVX512"
@@ -30,14 +30,48 @@ fn main() {
         "armv7a" => "ARMv7A",
         "armv7" => "ARMv7M",
         "aarch64" => "ARMv8A",
-        _ => match env("CARGO_CFG_TARGET_POINTER_WIDTH").as_str() {
+        "avr" => "AVR8",
+        _ => "compact",
+    };
+    eprintln!("initial XKCP target {xkcp_target:?}");
+
+    if cfg!(feature = "avr8") {
+        eprintln!("AVR8 XKCP target forced");
+        xkcp_target = "AVR8";
+    } else if cfg!(feature = "force-compact") {
+        eprintln!("compact XKCP target forced");
+        xkcp_target = "compact";
+    } else if cfg!(feature = "force-generic") || xkcp_target == "compact" {
+        let w = if cfg!(feature = "force-generic") {
+            "forced"
+        } else {
+            "selected"
+        };
+        eprintln!("generic XKCP target {w}");
+        xkcp_target = match env("CARGO_CFG_TARGET_POINTER_WIDTH").as_str() {
             "64" => "generic64",
             "32" => "generic32",
             width => {
                 eprintln!("no specialized target for pointer_width={width:?}");
                 "compact"
             }
-        },
+        };
+    }
+
+    if cfg!(feature = "generic-lc") && xkcp_target.starts_with("generic") {
+        eprintln!("generic-lc XKCP target");
+        xkcp_target = match xkcp_target {
+            "generic32" => "generic32lc",
+            "generic64" => "generic64lc",
+            _ => unreachable!("expected `generic{{32,64}}` target, got {xkcp_target:?}"),
+        };
+    }
+
+    let xkcp_target = if let Ok(target) = env_opt("XKCP_RS_TARGET") {
+        eprintln!("XKCP target overridden by environment variable");
+        target
+    } else {
+        xkcp_target.to_string()
     };
 
     let root = PathBuf::from(env("CARGO_MANIFEST_DIR"));
@@ -50,9 +84,10 @@ fn main() {
     cp_r(&xkcp_from, &xkcp);
 
     // build
+    eprintln!("final XKCP target selected: {xkcp_target:?}");
     let status = Command::new("make")
         .current_dir(&xkcp)
-        .arg(format!("{target}/libXKCP.a"))
+        .arg(format!("{xkcp_target}/libXKCP.a"))
         .status()
         .unwrap();
     if !status.success() {
@@ -60,7 +95,7 @@ fn main() {
     }
 
     // link
-    let xkcp_out = xkcp.join("bin").join(target);
+    let xkcp_out = xkcp.join("bin").join(xkcp_target);
     println!("cargo:rustc-link-search={}", xkcp_out.display());
     println!("cargo:rustc-link-lib=static=XKCP");
 
@@ -100,9 +135,15 @@ fn rerun_if_changed(path: &str) {
     println!("cargo:rerun-if-changed={path}");
 }
 
+#[track_caller]
 fn env(s: &str) -> String {
+    env_opt(s).unwrap()
+}
+
+#[track_caller]
+fn env_opt(s: &str) -> Result<String, env::VarError> {
     println!("cargo:rerun-if-env-changed={s}");
-    env::var(s).unwrap()
+    env::var(s)
 }
 
 fn cp_r(from: &Path, to: &Path) {

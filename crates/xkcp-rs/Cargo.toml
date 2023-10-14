@@ -16,6 +16,17 @@ repository.workspace = true
 default = ["std"]
 std = []
 
+# xkcp-sys forwarded features
+# Forces `AVR8` (8-bit AVR) XKCP target.
+avr8 = ["xkcp-sys/avr8"]
+# Forces `compact` XKCP target. WARNING: **much slower** than anything else
+force-compact = ["xkcp-sys/force-compact"]
+# Forces `generic32` or `generic64` XKCP target.
+force-generic = ["xkcp-sys/force-generic"]
+# Use `generic{32,64}lc` targets instead of `generic{32,64}`
+# > Same as `generic64` but featuring the lane complementing technique for platforms without a "and not" instruction
+generic-lc = ["xkcp-sys/generic-lc"]
+
 [dependencies]
 xkcp-sys.workspace = true
 
