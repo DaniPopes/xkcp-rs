@@ -112,20 +112,31 @@ fn main() {
     // bindgen
     eprintln!("generating bindings");
     let mut builder = bindgen::builder();
-    let headers = xkcp_out.join("libXKCP.a.headers");
-    for header in headers.read_dir().unwrap() {
-        let path = header.unwrap().path();
-        let stem = path.file_stem().unwrap().to_str().unwrap();
-        if stem.ends_with("-reference") {
-            continue;
-        }
-        // TODO: duplicate enumerators?
-        if stem.starts_with("Xoofff") {
-            continue;
-        }
-        let path = path.to_str().unwrap();
+
+    let mut headers = xkcp_out
+        .join("libXKCP.a.headers")
+        .read_dir()
+        .unwrap()
+        .filter_map(|header| {
+            let path = header.unwrap().path();
+            let stem = path.file_stem().unwrap().to_str().unwrap();
+            if stem.ends_with("-reference") {
+                return None;
+            }
+            // TODO: duplicate enumerators?
+            if stem.starts_with("Xoofff") {
+                return None;
+            }
+            Some(path)
+        })
+        .collect::<Vec<_>>();
+    headers.sort();
+    eprintln!("adding headers: {headers:?}");
+    for header in headers {
+        let path = header.to_str().unwrap();
         builder = builder.header(path).allowlist_file(path);
     }
+
     builder = builder
         .formatter(bindgen::Formatter::Prettyplease)
         .use_core()
