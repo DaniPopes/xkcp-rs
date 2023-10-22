@@ -87,7 +87,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: true
-      - name: install prerequisites
+      - name: Install xsltproc
         shell: bash
         run: |
           if [ "${{ matrix.spec.host }}" == "ubuntu-latest" ]; then
@@ -104,6 +104,25 @@ jobs:
         if: ${{ matrix.spec.test }}
         run: cargo test --workspace --target ${{ matrix.spec.target }} -vv
 
+  msrv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.65" # MSRV
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-on-failure: true
+      - name: Install xsltproc
+        run: sudo apt-get install xsltproc
+      - run: cargo build --workspace
+        env:
+          RUSTFLAGS: -Dwarnings
+
   clippy:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -115,7 +134,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: true
-      - name: install prerequisites
+      - name: Install xsltproc
         run: sudo apt-get install xsltproc
       - run: cargo clippy --workspace --all-targets
         env:
@@ -132,7 +151,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           cache-on-failure: true
-      - name: install prerequisites
+      - name: Install xsltproc
         run: sudo apt-get install xsltproc
       - run: cargo doc --workspace --no-deps --document-private-items
         env:

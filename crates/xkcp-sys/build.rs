@@ -185,7 +185,6 @@ fn cp_r(from: &Path, to: &Path) {
         let name = path.file_name().unwrap();
         let to = to.join(name);
         if path.is_dir() {
-            fs::create_dir_all(&to).unwrap();
             cp_r(&path, &to);
         } else {
             fs::copy(&path, &to).unwrap();

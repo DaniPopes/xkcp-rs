@@ -78,25 +78,25 @@ impl KeccakHash {
         unwrap_unreachable(Self::new(576, 1024, 512, 0x06))
     }
 
-    /// Initializes a Keccak-224 instance as specified in the FIPS 202 standard.
+    /// Initializes a Keccak-224 instance.
     #[inline]
     pub fn keccak224() -> Self {
         unwrap_unreachable(Self::new(1152, 448, 224, 0x01))
     }
 
-    /// Initializes a Keccak-256 instance as specified in the FIPS 202 standard.
+    /// Initializes a Keccak-256 instance.
     #[inline]
     pub fn keccak256() -> Self {
         unwrap_unreachable(Self::new(1088, 512, 256, 0x01))
     }
 
-    /// Initializes a Keccak-384 instance as specified in the FIPS 202 standard.
+    /// Initializes a Keccak-384 instance.
     #[inline]
     pub fn keccak384() -> Self {
         unwrap_unreachable(Self::new(832, 768, 384, 0x01))
     }
 
-    /// Initializes a Keccak-512 instance as specified in the FIPS 202 standard.
+    /// Initializes a Keccak-512 instance.
     #[inline]
     pub fn keccak512() -> Self {
         unwrap_unreachable(Self::new(576, 1024, 512, 0x01))
