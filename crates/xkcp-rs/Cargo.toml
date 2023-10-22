@@ -4,6 +4,7 @@ description = "Safe wrappers to the XKCP library"
 keywords = ["xkcp", "keccak", "sha3", "asm", "crypto"]
 categories = ["algorithms", "cryptography", "api-bindings"]
 homepage = "https://github.com/DaniPopes/xkcp-rs/tree/master/crates/xkcp-rs"
+documentation = "https://danipopes.github.io/xkcp-rs/xkcp_rs"
 
 version.workspace = true
 edition.workspace = true

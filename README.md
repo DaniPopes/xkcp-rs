@@ -2,6 +2,8 @@
 
 Bindings and wrappers to the [eXtended Keccak Code Package (XKCP)](https://github.com/XKCP/XKCP) library.
 
+[Documentation](https://danipopes.github.io/xkcp-rs)
+
 > [!IMPORTANT]
 > The xkcp-rs API will **never** be considered stable, and is subject to change at any time without prior warning.
 

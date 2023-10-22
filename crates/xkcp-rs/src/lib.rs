@@ -2,6 +2,7 @@
 //!
 //! Safe wrappers to the [eXtended Keccak Code Package (XKCP)](https://github.com/XKCP/XKCP) library.
 
+#![doc(html_root_url = "https://danipopes.github.io/xkcp-rs")]
 #![warn(
     missing_debug_implementations,
     missing_docs,

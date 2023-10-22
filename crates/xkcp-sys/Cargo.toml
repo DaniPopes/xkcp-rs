@@ -4,6 +4,7 @@ description = "Native bindings to the XKCP library"
 keywords = ["xkcp", "keccak", "sha3", "asm", "crypto"]
 categories = ["algorithms", "cryptography", "external-ffi-bindings"]
 homepage = "https://github.com/DaniPopes/xkcp-rs/tree/master/crates/xkcp-sys"
+documentation = "https://danipopes.github.io/xkcp-rs/xkcp_sys"
 include = [
     "/src/",
     "/XKCP/**/*.build",
