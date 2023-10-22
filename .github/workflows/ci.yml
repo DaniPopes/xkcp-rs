@@ -6,6 +6,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -153,9 +157,18 @@ jobs:
           cache-on-failure: true
       - name: Install xsltproc
         run: sudo apt-get install xsltproc
-      - run: cargo doc --workspace --no-deps --document-private-items
+      - run: cargo doc --workspace
         env:
-          RUSTDOCFLAGS: "--cfg docsrs -D warnings"
+          RUSTDOCFLAGS:
+            --cfg docsrs -D warnings --show-type-layout --generate-link-to-definition
+            --enable-index-page -Zunstable-options
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/doc
+          force_orphan: true
 
   fmt:
     runs-on: ubuntu-latest

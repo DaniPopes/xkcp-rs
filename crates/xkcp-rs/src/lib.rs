@@ -2,8 +2,16 @@
 //!
 //! Safe wrappers to the [eXtended Keccak Code Package (XKCP)](https://github.com/XKCP/XKCP) library.
 
-#![warn(missing_docs, rust_2018_idioms)]
+#![warn(
+    missing_debug_implementations,
+    missing_docs,
+    rust_2018_idioms,
+    unreachable_pub,
+    rustdoc::all
+)]
+#![cfg_attr(not(test), warn(unused_crate_dependencies))]
 #![cfg_attr(not(feature = "std"), no_std)]
+#![cfg_attr(docsrs, feature(doc_cfg, doc_auto_cfg))]
 
 pub extern crate xkcp_sys as ffi;
 
