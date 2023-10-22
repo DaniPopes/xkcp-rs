@@ -2,6 +2,9 @@
 
 Bindings and wrappers to the [eXtended Keccak Code Package (XKCP)](https://github.com/XKCP/XKCP) library.
 
+> [!IMPORTANT]
+> The xkcp-rs API will **never** be considered stable, and is subject to change at any time without prior warning.
+
 ## Requirements
 
 To build on Linux or macOS, the following tools are needed:
