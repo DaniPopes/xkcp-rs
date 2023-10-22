@@ -10,9 +10,6 @@ concurrency:
   cancel-in-progress: true
   group: ${{ github.workflow }}-${{ github.ref }}
 
-permissions:
-  pages: write
-
 env:
   CARGO_TERM_COLOR: always
 
@@ -150,6 +147,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: write
+      pages: write
     steps:
       - uses: actions/checkout@v4
         with:
