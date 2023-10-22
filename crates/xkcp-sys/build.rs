@@ -131,7 +131,6 @@ fn main() {
         })
         .collect::<Vec<_>>();
     headers.sort();
-    eprintln!("adding headers: {headers:?}");
     for header in headers {
         let path = header.to_str().unwrap();
         builder = builder.header(path).allowlist_file(path);
