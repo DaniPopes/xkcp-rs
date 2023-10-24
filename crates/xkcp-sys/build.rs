@@ -147,6 +147,8 @@ fn xkcp_target_from_cargo() -> &'static str {
                 "AVX2"
             } else if feature("avx") {
                 "AVX"
+            } else if feature("xop") {
+                "XOP"
             } else if feature("ssse3") {
                 "SSSE3"
             } else {
