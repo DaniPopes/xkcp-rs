@@ -102,7 +102,8 @@ fn get_xkcp_target() -> &'static str {
     // XKCP_RS_TARGET takes precedence over everything
     if let Ok(target) = maybe_env("XKCP_RS_TARGET") {
         eprintln!("XKCP target overridden by environment variable");
-        return target.leak();
+        // TODO(MSRV-1.72): use `String::leak` instead
+        return Box::leak(target.into_boxed_str());
     }
 
     if cfg!(feature = "avr8") {
