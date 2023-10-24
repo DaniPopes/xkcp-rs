@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["xkcp_rs","xkcp_sys"];
