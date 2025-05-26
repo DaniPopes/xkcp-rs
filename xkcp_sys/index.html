@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="xkcp-sys"><title>xkcp_sys - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-84e720fa.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="xkcp_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.89.0-nightly (283db70ac 2025-05-25)" data-channel="nightly" data-search-js="search-f7877310.js" data-settings-js="settings-5514c975.js" ><script src="../static.files/storage-4e99c027.js"></script><script defer src="../crates.js"></script><script defer src="../static.files/main-fd3af306.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-32bb7600.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../xkcp_sys/index.html">xkcp_<wbr>sys</a><span class="version">0.0.5</span></h2></div><div class="sidebar-elems"><ul class="block"><li><a id="all-types" href="all.html">All Items</a></li></ul><section id="rustdoc-toc"><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#xkcp-sys" title="xkcp-sys">xkcp-sys</a></li></ul><h3><a href="#reexports">Crate Items</a></h3><ul class="block"><li><a href="#reexports" title="Re-exports">Re-exports</a></li><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#enums" title="Enums">Enums</a></li><li><a href="#constants" title="Constants">Constants</a></li><li><a href="#functions" title="Functions">Functions</a></li><li><a href="#types" title="Type Aliases">Type Aliases</a></li></ul></section><div id="rustdoc-modnav"></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><h1>Crate <span>xkcp_sys</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/xkcp_sys/lib.rs.html#1-10">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="xkcp-sys"><a class="doc-anchor" href="#xkcp-sys">§</a>xkcp-sys</h2>
+<p>Native bindings to the <a href="https://github.com/XKCP/XKCP">eXtended Keccak Code Package (XKCP)</a> library.</p>
+</div></details><h2 id="reexports" class="section-header">Re-exports<a href="#reexports" class="anchor">§</a></h2><dl class="item-table reexports"><dt id="reexport.KangarooTwelve_Phases"><code>pub use self::<a class="enum" href="enum.KCP_Phases.html" title="enum xkcp_sys::KCP_Phases">KCP_Phases</a> as KangarooTwelve_Phases;</code></dt></dl><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.KMAC_Instance.html" title="struct xkcp_sys::KMAC_Instance">KMAC_<wbr>Instance</a></dt><dt><a class="struct" href="struct.KangarooTwelve_Instance.html" title="struct xkcp_sys::KangarooTwelve_Instance">Kangaroo<wbr>Twelve_<wbr>Instance</a></dt><dt><a class="struct" href="struct.KeccakP1600_plain64_state.html" title="struct xkcp_sys::KeccakP1600_plain64_state">Keccak<wbr>P1600_<wbr>plain64_<wbr>state</a></dt><dt><a class="struct" href="struct.KeccakWidth1600_DuplexInstanceStruct.html" title="struct xkcp_sys::KeccakWidth1600_DuplexInstanceStruct">Keccak<wbr>Width1600_<wbr>Duplex<wbr>Instance<wbr>Struct</a></dt><dt><a class="struct" href="struct.KeccakWidth1600_SpongeInstanceStruct.html" title="struct xkcp_sys::KeccakWidth1600_SpongeInstanceStruct">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Instance<wbr>Struct</a></dt><dt><a class="struct" href="struct.KeccakWidth1600_SpongePRG_InstanceStruct.html" title="struct xkcp_sys::KeccakWidth1600_SpongePRG_InstanceStruct">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Instance<wbr>Struct</a></dt><dt><a class="struct" href="struct.Keccak_HashInstance.html" title="struct xkcp_sys::Keccak_HashInstance">Keccak_<wbr>Hash<wbr>Instance</a></dt><dt><a class="struct" href="struct.Kravatte_Instance.html" title="struct xkcp_sys::Kravatte_Instance">Kravatte_<wbr>Instance</a></dt><dt><a class="struct" href="struct.Kravatte_SANE_Instance.html" title="struct xkcp_sys::Kravatte_SANE_Instance">Kravatte_<wbr>SANE_<wbr>Instance</a></dt><dt><a class="struct" href="struct.Kravatte_SANSE_Instance.html" title="struct xkcp_sys::Kravatte_SANSE_Instance">Kravatte_<wbr>SANSE_<wbr>Instance</a></dt><dt><a class="struct" href="struct.ParallelHash_Instance.html" title="struct xkcp_sys::ParallelHash_Instance">Parallel<wbr>Hash_<wbr>Instance</a></dt><dt><a class="struct" href="struct.TupleElement.html" title="struct xkcp_sys::TupleElement">Tuple<wbr>Element</a></dt><dt><a class="struct" href="struct.TupleHash_Instance.html" title="struct xkcp_sys::TupleHash_Instance">Tuple<wbr>Hash_<wbr>Instance</a></dt><dt><a class="struct" href="struct.TurboSHAKE_SpongeInstanceStruct.html" title="struct xkcp_sys::TurboSHAKE_SpongeInstanceStruct">TurboSHAKE_<wbr>Sponge<wbr>Instance<wbr>Struct</a></dt><dt><a class="struct" href="struct.Xoodoo_plain32_state.html" title="struct xkcp_sys::Xoodoo_plain32_state">Xoodoo_<wbr>plain32_<wbr>state</a></dt><dd>For the documentation, see SnP-documentation.h.</dd><dt><a class="struct" href="struct.Xoodyak_CyclistInstanceStruct.html" title="struct xkcp_sys::Xoodyak_CyclistInstanceStruct">Xoodyak_<wbr>Cyclist<wbr>Instance<wbr>Struct</a></dt><dt><a class="struct" href="struct.cSHAKE_Instance.html" title="struct xkcp_sys::cSHAKE_Instance">cSHAKE_<wbr>Instance</a></dt></dl><h2 id="enums" class="section-header">Enums<a href="#enums" class="anchor">§</a></h2><dl class="item-table"><dt><a class="enum" href="enum.HashReturn.html" title="enum xkcp_sys::HashReturn">Hash<wbr>Return</a></dt><dt><a class="enum" href="enum.KCP_Phases.html" title="enum xkcp_sys::KCP_Phases">KCP_<wbr>Phases</a></dt><dt><a class="enum" href="enum.Kravatte_Phases.html" title="enum xkcp_sys::Kravatte_Phases">Kravatte_<wbr>Phases</a></dt></dl><h2 id="constants" class="section-header">Constants<a href="#constants" class="anchor">§</a></h2><dl class="item-table"><dt><a class="constant" href="constant.Cyclist_ModeHash.html" title="constant xkcp_sys::Cyclist_ModeHash">Cyclist_<wbr>Mode<wbr>Hash</a></dt><dt><a class="constant" href="constant.Cyclist_ModeKeyed.html" title="constant xkcp_sys::Cyclist_ModeKeyed">Cyclist_<wbr>Mode<wbr>Keyed</a></dt><dt><a class="constant" href="constant.Cyclist_PhaseDown.html" title="constant xkcp_sys::Cyclist_PhaseDown">Cyclist_<wbr>Phase<wbr>Down</a></dt><dt><a class="constant" href="constant.Cyclist_PhaseUp.html" title="constant xkcp_sys::Cyclist_PhaseUp">Cyclist_<wbr>Phase<wbr>Up</a></dt><dt><a class="constant" href="constant.IS_BIG_ENDIAN.html" title="constant xkcp_sys::IS_BIG_ENDIAN">IS_<wbr>BIG_<wbr>ENDIAN</a></dt><dt><a class="constant" href="constant.IS_LITTLE_ENDIAN.html" title="constant xkcp_sys::IS_LITTLE_ENDIAN">IS_<wbr>LITTLE_<wbr>ENDIAN</a></dt><dt><a class="constant" href="constant.KRAVATTE_FLAG_INIT.html" title="constant xkcp_sys::KRAVATTE_FLAG_INIT">KRAVATTE_<wbr>FLAG_<wbr>INIT</a></dt><dt><a class="constant" href="constant.KRAVATTE_FLAG_LAST_PART.html" title="constant xkcp_sys::KRAVATTE_FLAG_LAST_PART">KRAVATTE_<wbr>FLAG_<wbr>LAST_<wbr>PART</a></dt><dt><a class="constant" href="constant.KRAVATTE_FLAG_NONE.html" title="constant xkcp_sys::KRAVATTE_FLAG_NONE">KRAVATTE_<wbr>FLAG_<wbr>NONE</a></dt><dt><a class="constant" href="constant.KRAVATTE_FLAG_SHORT.html" title="constant xkcp_sys::KRAVATTE_FLAG_SHORT">KRAVATTE_<wbr>FLAG_<wbr>SHORT</a></dt><dt><a class="constant" href="constant.KeccakP1600_implementation.html" title="constant xkcp_sys::KeccakP1600_implementation">Keccak<wbr>P1600_<wbr>implementation</a></dt><dt><a class="constant" href="constant.KeccakP1600_implementation_config.html" title="constant xkcp_sys::KeccakP1600_implementation_config">Keccak<wbr>P1600_<wbr>implementation_<wbr>config</a></dt><dt><a class="constant" href="constant.KravatteAlignment.html" title="constant xkcp_sys::KravatteAlignment">Kravatte<wbr>Alignment</a></dt><dt><a class="constant" href="constant.KravatteMaxParallellism.html" title="constant xkcp_sys::KravatteMaxParallellism">Kravatte<wbr>MaxParallellism</a></dt><dt><a class="constant" href="constant.Kravatte_RollcOffset.html" title="constant xkcp_sys::Kravatte_RollcOffset">Kravatte_<wbr>Rollc<wbr>Offset</a></dt><dt><a class="constant" href="constant.Kravatte_RollcSizeInBytes.html" title="constant xkcp_sys::Kravatte_RollcSizeInBytes">Kravatte_<wbr>Rollc<wbr>Size<wbr>InBytes</a></dt><dt><a class="constant" href="constant.Kravatte_RolleOffset.html" title="constant xkcp_sys::Kravatte_RolleOffset">Kravatte_<wbr>Rolle<wbr>Offset</a></dt><dt><a class="constant" href="constant.Kravatte_RolleSizeInBytes.html" title="constant xkcp_sys::Kravatte_RolleSizeInBytes">Kravatte_<wbr>Rolle<wbr>Size<wbr>InBytes</a></dt><dt><a class="constant" href="constant.Kravatte_SANE_TagLength.html" title="constant xkcp_sys::Kravatte_SANE_TagLength">Kravatte_<wbr>SANE_<wbr>TagLength</a></dt><dt><a class="constant" href="constant.Kravatte_SANE_l.html" title="constant xkcp_sys::Kravatte_SANE_l">Kravatte_<wbr>SANE_<wbr>l</a></dt><dt><a class="constant" href="constant.Kravatte_SANSE_TagLength.html" title="constant xkcp_sys::Kravatte_SANSE_TagLength">Kravatte_<wbr>SANSE_<wbr>TagLength</a></dt><dt><a class="constant" href="constant.Kravatte_WBCAE_t.html" title="constant xkcp_sys::Kravatte_WBCAE_t">Kravatte_<wbr>WBCAE_<wbr>t</a></dt><dt><a class="constant" href="constant.Kravatte_WBC_b.html" title="constant xkcp_sys::Kravatte_WBC_b">Kravatte_<wbr>WBC_<wbr>b</a></dt><dt><a class="constant" href="constant.Kravatte_WBC_l.html" title="constant xkcp_sys::Kravatte_WBC_l">Kravatte_<wbr>WBC_<wbr>l</a></dt><dt><a class="constant" href="constant.MAXROUNDS.html" title="constant xkcp_sys::MAXROUNDS">MAXROUNDS</a></dt><dt><a class="constant" href="constant.NCOLUMS.html" title="constant xkcp_sys::NCOLUMS">NCOLUMS</a></dt><dt><a class="constant" href="constant.NLANES.html" title="constant xkcp_sys::NLANES">NLANES</a></dt><dt><a class="constant" href="constant.NROWS.html" title="constant xkcp_sys::NROWS">NROWS</a></dt><dt><a class="constant" href="constant.PLATFORM_BYTE_ORDER.html" title="constant xkcp_sys::PLATFORM_BYTE_ORDER">PLATFORM_<wbr>BYTE_<wbr>ORDER</a></dt><dt><a class="constant" href="constant.SnP_widthInBytes.html" title="constant xkcp_sys::SnP_widthInBytes">SnP_<wbr>width<wbr>InBytes</a></dt><dt><a class="constant" href="constant.Xoodoo_implementation.html" title="constant xkcp_sys::Xoodoo_implementation">Xoodoo_<wbr>implementation</a></dt><dt><a class="constant" href="constant.Xoodyak_Rhash.html" title="constant xkcp_sys::Xoodyak_Rhash">Xoodyak_<wbr>Rhash</a></dt><dt><a class="constant" href="constant.Xoodyak_Rkin.html" title="constant xkcp_sys::Xoodyak_Rkin">Xoodyak_<wbr>Rkin</a></dt><dt><a class="constant" href="constant.Xoodyak_Rkout.html" title="constant xkcp_sys::Xoodyak_Rkout">Xoodyak_<wbr>Rkout</a></dt><dt><a class="constant" href="constant.Xoodyak_f_bPrime.html" title="constant xkcp_sys::Xoodyak_f_bPrime">Xoodyak_<wbr>f_<wbr>bPrime</a></dt><dt><a class="constant" href="constant.Xoodyak_lRatchet.html" title="constant xkcp_sys::Xoodyak_lRatchet">Xoodyak_<wbr>lRatchet</a></dt><dt><a class="constant" href="constant._rc1.html" title="constant xkcp_sys::_rc1">_rc1</a></dt><dt><a class="constant" href="constant._rc2.html" title="constant xkcp_sys::_rc2">_rc2</a></dt><dt><a class="constant" href="constant._rc3.html" title="constant xkcp_sys::_rc3">_rc3</a></dt><dt><a class="constant" href="constant._rc4.html" title="constant xkcp_sys::_rc4">_rc4</a></dt><dt><a class="constant" href="constant._rc5.html" title="constant xkcp_sys::_rc5">_rc5</a></dt><dt><a class="constant" href="constant._rc6.html" title="constant xkcp_sys::_rc6">_rc6</a></dt><dt><a class="constant" href="constant._rc7.html" title="constant xkcp_sys::_rc7">_rc7</a></dt><dt><a class="constant" href="constant._rc8.html" title="constant xkcp_sys::_rc8">_rc8</a></dt><dt><a class="constant" href="constant._rc9.html" title="constant xkcp_sys::_rc9">_rc9</a></dt><dt><a class="constant" href="constant._rc10.html" title="constant xkcp_sys::_rc10">_rc10</a></dt><dt><a class="constant" href="constant._rc11.html" title="constant xkcp_sys::_rc11">_rc11</a></dt><dt><a class="constant" href="constant._rc12.html" title="constant xkcp_sys::_rc12">_rc12</a></dt></dl><h2 id="functions" class="section-header">Functions<a href="#functions" class="anchor">§</a></h2><dl class="item-table"><dt><a class="fn" href="fn.KMAC128.html" title="fn xkcp_sys::KMAC128">KMAC128</a><sup title="unsafe function">⚠</sup></dt><dd>KMAC128 function, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  key             Pointer to the key (K).
+@param  keyBitLen       The length of the key in bits.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The length of the input message in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC256.html" title="fn xkcp_sys::KMAC256">KMAC256</a><sup title="unsafe function">⚠</sup></dt><dd>KMAC256 function, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  key             Pointer to the key (K).
+@param  keyBitLen       The length of the key in bits.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The length of the input message in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC128_Final.html" title="fn xkcp_sys::KMAC128_Final">KMAC128_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input data have been input and to get
+output bits if the length was specified when calling KMAC128_Initialize().
+@param  kmInstance      Pointer to the instance initialized by KMAC128_Initialize().
+If @a outputBitLen was not 0 in the call to KMAC128_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to KMAC128_Initialize(), the output bits
+must be extracted using the KMAC128_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC128_Initialize.html" title="fn xkcp_sys::KMAC128_Initialize">KMAC128_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the KMAC128 instance used in sequential MACing mode.
+@param  kmInstance      Pointer to the instance to be initialized.
+@param  key             Pointer to the key (K).
+@param  keyBitLen       The length of the key in bits.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC128_Squeeze.html" title="fn xkcp_sys::KMAC128_Squeeze">KMAC128_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  kmInstance      Pointer to the instance initialized by KMAC128_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    KMAC128_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC128_Update.html" title="fn xkcp_sys::KMAC128_Update">KMAC128_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be MACed.
+@param  kmInstance      Pointer to the instance initialized by KMAC128_Initialize().
+@param  input           Pointer to the input data.
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC256_Final.html" title="fn xkcp_sys::KMAC256_Final">KMAC256_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input data have been input and to get
+output bits if the length was specified when calling KMAC256_Initialize().
+@param  kmInstance      Pointer to the instance initialized by KMAC256_Initialize().
+If @a outputBitLen was not 0 in the call to KMAC256_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to KMAC256_Initialize(), the output bits
+must be extracted using the KMAC256_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC256_Initialize.html" title="fn xkcp_sys::KMAC256_Initialize">KMAC256_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the KMAC256 instance used in sequential MACing mode.
+@param  kmInstance      Pointer to the instance to be initialized.
+@param  key             Pointer to the key (K).
+@param  keyBitLen       The length of the key in bits.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC256_Squeeze.html" title="fn xkcp_sys::KMAC256_Squeeze">KMAC256_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  kmInstance      Pointer to the instance initialized by KMAC256_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    KMAC256_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KMAC256_Update.html" title="fn xkcp_sys::KMAC256_Update">KMAC256_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be MACed.
+@param  kmInstance      Pointer to the instance initialized by KMAC256_Initialize().
+@param  input           Pointer to the input data.
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KT128.html" title="fn xkcp_sys::KT128">KT128</a><sup title="unsafe function">⚠</sup></dt><dd>Wrapper around <code>KangarooTwelve</code> to use the 128-bit security level.</dd><dt><a class="fn" href="fn.KT256.html" title="fn xkcp_sys::KT256">KT256</a><sup title="unsafe function">⚠</sup></dt><dd>Wrapper around <code>KangarooTwelve</code> to use the 256-bit security level.</dd><dt><a class="fn" href="fn.KangarooTwelve.html" title="fn xkcp_sys::KangarooTwelve">Kangaroo<wbr>Twelve</a><sup title="unsafe function">⚠</sup></dt><dd>Extendable ouput function KangarooTwelve.
+@param  securityLevel   128 for KT128 or 256 for KT256
+@param  input           Pointer to the input message (M).
+@param  inputByteLen    The length of the input message in bytes.
+@param  output          Pointer to the output buffer.
+@param  outputByteLen   The desired number of output bytes.
+@param  customization   Pointer to the customization string (C).
+@param  customByteLen   The length of the customization string in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KangarooTwelve_Final.html" title="fn xkcp_sys::KangarooTwelve_Final">Kangaroo<wbr>Twelve_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all the input message has been input, and to get
+output bytes if the length was specified when calling KangarooTwelve_Initialize().
+@param  ktInstance      Pointer to the hash instance initialized by KangarooTwelve_Initialize().
+If @a outputByteLen was not 0 in the call to KangarooTwelve_Initialize(), the number of
+output bytes is equal to @a outputByteLen.
+If @a outputByteLen was 0 in the call to KangarooTwelve_Initialize(), the output bytes
+must be extracted using the KangarooTwelve_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@param  customization   Pointer to the customization string (C).
+@param  customByteLen   The length of the customization string in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KangarooTwelve_Initialize.html" title="fn xkcp_sys::KangarooTwelve_Initialize">Kangaroo<wbr>Twelve_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize a KangarooTwelve instance.
+@param  ktInstance      Pointer to the instance to be initialized.
+@param  securityLevel   128 for KT128 or 256 for KT256
+@param  outputByteLen   The desired number of output bytes,
+or 0 for an arbitrarily-long output.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KangarooTwelve_Squeeze.html" title="fn xkcp_sys::KangarooTwelve_Squeeze">Kangaroo<wbr>Twelve_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  ktInstance     Pointer to the hash instance initialized by KangarooTwelve_Initialize().
+@param  data           Pointer to the buffer where to store the output data.
+@param  outputByteLen  The number of output bytes desired.
+@pre    KangarooTwelve_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KangarooTwelve_Update.html" title="fn xkcp_sys::KangarooTwelve_Update">Kangaroo<wbr>Twelve_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  ktInstance      Pointer to the instance initialized by KangarooTwelve_Initialize().
+@param  input           Pointer to the input message data (M).
+@param  inputByteLen    The number of bytes provided in the input message data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.KeccakF1600_FastLoop_Absorb.html" title="fn xkcp_sys::KeccakF1600_FastLoop_Absorb">Keccak<wbr>F1600_<wbr>Fast<wbr>Loop_<wbr>Absorb</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_12rounds_FastLoop_Absorb.html" title="fn xkcp_sys::KeccakP1600_12rounds_FastLoop_Absorb">Keccak<wbr>P1600_<wbr>12rounds_<wbr>Fast<wbr>Loop_<wbr>Absorb</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_AddBytes.html" title="fn xkcp_sys::KeccakP1600_AddBytes">Keccak<wbr>P1600_<wbr>AddBytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_ExtractAndAddBytes.html" title="fn xkcp_sys::KeccakP1600_ExtractAndAddBytes">Keccak<wbr>P1600_<wbr>Extract<wbr>AndAdd<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_ExtractBytes.html" title="fn xkcp_sys::KeccakP1600_ExtractBytes">Keccak<wbr>P1600_<wbr>Extract<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_Initialize.html" title="fn xkcp_sys::KeccakP1600_Initialize">Keccak<wbr>P1600_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_OverwriteBytes.html" title="fn xkcp_sys::KeccakP1600_OverwriteBytes">Keccak<wbr>P1600_<wbr>Overwrite<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_OverwriteWithZeroes.html" title="fn xkcp_sys::KeccakP1600_OverwriteWithZeroes">Keccak<wbr>P1600_<wbr>Overwrite<wbr>With<wbr>Zeroes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_Permute_12rounds.html" title="fn xkcp_sys::KeccakP1600_Permute_12rounds">Keccak<wbr>P1600_<wbr>Permute_<wbr>12rounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_Permute_24rounds.html" title="fn xkcp_sys::KeccakP1600_Permute_24rounds">Keccak<wbr>P1600_<wbr>Permute_<wbr>24rounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakP1600_Permute_Nrounds.html" title="fn xkcp_sys::KeccakP1600_Permute_Nrounds">Keccak<wbr>P1600_<wbr>Permute_<wbr>Nrounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexInitialize.html" title="fn xkcp_sys::KeccakWidth1600_DuplexInitialize">Keccak<wbr>Width1600_<wbr>Duplex<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_Duplexing.html" title="fn xkcp_sys::KeccakWidth1600_Duplexing">Keccak<wbr>Width1600_<wbr>Duplexing</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingFeedPartialInput.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingFeedPartialInput">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>Feed<wbr>Partial<wbr>Input</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingFeedZeroes.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingFeedZeroes">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>Feed<wbr>Zeroes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingGetFurtherOutput.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingGetFurtherOutput">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>GetFurther<wbr>Output</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingGetFurtherOutputAndAdd.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingGetFurtherOutputAndAdd">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>GetFurther<wbr>Output<wbr>AndAdd</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingOverwritePartialInput.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingOverwritePartialInput">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>Overwrite<wbr>Partial<wbr>Input</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_DuplexingOverwriteWithZeroes.html" title="fn xkcp_sys::KeccakWidth1600_DuplexingOverwriteWithZeroes">Keccak<wbr>Width1600_<wbr>Duplexing<wbr>Overwrite<wbr>With<wbr>Zeroes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_Sponge.html" title="fn xkcp_sys::KeccakWidth1600_Sponge">Keccak<wbr>Width1600_<wbr>Sponge</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongeAbsorb.html" title="fn xkcp_sys::KeccakWidth1600_SpongeAbsorb">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Absorb</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongeAbsorbLastFewBits.html" title="fn xkcp_sys::KeccakWidth1600_SpongeAbsorbLastFewBits">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Absorb<wbr>Last<wbr>FewBits</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongeInitialize.html" title="fn xkcp_sys::KeccakWidth1600_SpongeInitialize">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongePRG_Feed.html" title="fn xkcp_sys::KeccakWidth1600_SpongePRG_Feed">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Feed</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongePRG_Fetch.html" title="fn xkcp_sys::KeccakWidth1600_SpongePRG_Fetch">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Fetch</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongePRG_Forget.html" title="fn xkcp_sys::KeccakWidth1600_SpongePRG_Forget">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Forget</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongePRG_Initialize.html" title="fn xkcp_sys::KeccakWidth1600_SpongePRG_Initialize">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.KeccakWidth1600_SpongeSqueeze.html" title="fn xkcp_sys::KeccakWidth1600_SpongeSqueeze">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Keccak_HashFinal.html" title="fn xkcp_sys::Keccak_HashFinal">Keccak_<wbr>Hash<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling Keccak_HashInitialize().
+@param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+If @a hashbitlen was not 0 in the call to Keccak_HashInitialize(), the number of
+output bits is equal to @a hashbitlen.
+If @a hashbitlen was 0 in the call to Keccak_HashInitialize(), the output bits
+must be extracted using the Keccak_HashSqueeze() function.
+@param  hashval     Pointer to the buffer where to store the output data.
+@return KECCAK_SUCCESS if successful, KECCAK_FAIL otherwise.</dd><dt><a class="fn" href="fn.Keccak_HashInitialize.html" title="fn xkcp_sys::Keccak_HashInitialize">Keccak_<wbr>Hash<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the Keccak[r, c] sponge function instance used in sequential hashing mode.
+@param  hashInstance    Pointer to the hash instance to be initialized.
+@param  rate        The value of the rate r.
+@param  capacity    The value of the capacity c.
+@param  hashbitlen  The desired number of output bits,
+or 0 for an arbitrarily-long output.
+@param  delimitedSuffix Bits that will be automatically appended to the end
+of the input message, as in domain separation.
+This is a byte containing from 0 to 7 bits
+formatted like the @a delimitedData parameter of
+the Keccak_SpongeAbsorbLastFewBits() function.
+@pre    One must have r+c=1600 and the rate a multiple of 8 bits in this implementation.
+@return KECCAK_SUCCESS if successful, KECCAK_FAIL otherwise.</dd><dt><a class="fn" href="fn.Keccak_HashSqueeze.html" title="fn xkcp_sys::Keccak_HashSqueeze">Keccak_<wbr>Hash<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+@param  data        Pointer to the buffer where to store the output data.
+@param  databitlen  The number of output bits desired (must be a multiple of 8).
+@pre    Keccak_HashFinal() must have been already called.
+@pre    @a databitlen is a multiple of 8.
+@return KECCAK_SUCCESS if successful, KECCAK_FAIL otherwise.</dd><dt><a class="fn" href="fn.Keccak_HashUpdate.html" title="fn xkcp_sys::Keccak_HashUpdate">Keccak_<wbr>Hash<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  hashInstance    Pointer to the hash instance initialized by Keccak_HashInitialize().
+@param  data        Pointer to the input data.
+When @a databitLen is not a multiple of 8, the last bits of data must be
+in the least significant bits of the last byte (little-endian convention).
+In this case, the (8 - @a databitLen mod 8) most significant bits
+of the last byte are ignored.
+@param  databitLen  The number of input bits provided in the input data.
+@pre    In the previous call to Keccak_HashUpdate(), databitlen was a multiple of 8.
+@return KECCAK_SUCCESS if successful, KECCAK_FAIL otherwise.</dd><dt><a class="fn" href="fn.Kra.html" title="fn xkcp_sys::Kra">Kra</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be compressed.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_MaskDerivation().
+@param  input           Pointer to the input message data (M).
+@param  inputBitLen     The number of bits provided in the input message data.
+This must be a multiple of 8 if KRAVATTE_FLAG_LAST_PART flag not set.
+@param  flags           Bitwise or combination of KRAVATTE_FLAG_NONE, KRAVATTE_FLAG_INIT, KRAVATTE_FLAG_LAST_PART.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte.html" title="fn xkcp_sys::Kravatte">Kravatte</a><sup title="unsafe function">⚠</sup></dt><dd>Function to compress input data and expand output data.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_MaskDerivation().
+@param  input           Pointer to the input message (M).
+@param  inputBitLen     The number of bits provided in the input message data.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The number of output bits desired.
+@param  flags           Bitwise or combination of KRAVATTE_FLAG_NONE, KRAVATTE_FLAG_INIT, KRAVATTE_FLAG_SHORT, KRAVATTE_FLAG_LAST_PART.
+KRAVATTE_FLAG_LAST_PART is internally forced to true for input and output.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_MaskDerivation.html" title="fn xkcp_sys::Kravatte_MaskDerivation">Kravatte_<wbr>Mask<wbr>Derivation</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize a Kravatte instance with given key.
+@param  kvInstance      Pointer to the instance to be initialized.
+@param  Key             Pointer to the key (K).
+@param  KeyBitLen       The length of the key in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANE_Initialize.html" title="fn xkcp_sys::Kravatte_SANE_Initialize">Kravatte_<wbr>SANE_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize a Kravatte SANE instance with given key and nonce.
+@param  kvInstance      Pointer to the instance to be initialized.
+@param  Key             Pointer to the key (K).
+@param  KeyBitLen       The length of the key in bits.
+@param  Nonce           Pointer to the nonce (N).
+@param  NonceBitLen     The length of the nonce in bits.
+@param  tag             The buffer where to store the tag.
+This buffer must be minimum Kravatte_SANE_TagLength bytes long.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANE_Unwrap.html" title="fn xkcp_sys::Kravatte_SANE_Unwrap">Kravatte_<wbr>SANE_<wbr>Unwrap</a><sup title="unsafe function">⚠</sup></dt><dd>Function to unwrap ciphertext into plaintext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_SANE_Initialize().
+@param  ciphertext      Pointer to ciphertext data to unwrap.
+@param  plaintext       Pointer to buffer where the full unwrapped data will be stored.
+The plaintext buffer must not overlap ciphertext.
+@param  dataBitLen      The size of the ciphertext/plaintext data.
+@param  AD              Pointer to the Associated Data.
+@param  ADBitLen        The number of bytes provided in the Associated Data.
+@param  tag             The buffer where to read the tag to check (when lastFlag is set).
+This buffer must be minimum Kravatte_SANE_TagLength bytes long.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANE_Wrap.html" title="fn xkcp_sys::Kravatte_SANE_Wrap">Kravatte_<wbr>SANE_<wbr>Wrap</a><sup title="unsafe function">⚠</sup></dt><dd>Function to wrap plaintext into ciphertext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_SANE_Initialize().
+@param  plaintext       Pointer to plaintext data to wrap.
+@param  ciphertext      Pointer to buffer where the full wrapped data will be stored.
+The ciphertext buffer must not overlap plaintext.
+@param  dataBitLen      The size of the plaintext/ciphertext data.
+@param  AD              Pointer to the Associated Data.
+@param  ADBitLen        The number of bytes provided in the Associated Data.
+@param  tag             The buffer where to store the tag.
+This buffer must be minimum Kravatte_SANE_TagLength bytes long.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANSE_Initialize.html" title="fn xkcp_sys::Kravatte_SANSE_Initialize">Kravatte_<wbr>SANSE_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize a Kravatte SANSE instance with given key and nonce.
+@param  kvInstance      Pointer to the instance to be initialized.
+@param  Key             Pointer to the key (K).
+@param  KeyBitLen       The length of the key in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANSE_Unwrap.html" title="fn xkcp_sys::Kravatte_SANSE_Unwrap">Kravatte_<wbr>SANSE_<wbr>Unwrap</a><sup title="unsafe function">⚠</sup></dt><dd>Function to unwrap ciphertext into plaintext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_SANSE_Initialize().
+@param  ciphertext      Pointer to ciphertext data to unwrap.
+@param  plaintext       Pointer to buffer where the full unwrapped data will be stored.
+The plaintext buffer must not overlap ciphertext.
+@param  dataBitLen      The size of the ciphertext/plaintext data.
+@param  AD              Pointer to the Associated Data.
+@param  ADBitLen        The number of bytes provided in the Associated Data.
+@param  tag             The buffer where to read the tag to check (when lastFlag is set).
+This buffer must be minimum Kravatte_SANSE_TagLength bytes long.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_SANSE_Wrap.html" title="fn xkcp_sys::Kravatte_SANSE_Wrap">Kravatte_<wbr>SANSE_<wbr>Wrap</a><sup title="unsafe function">⚠</sup></dt><dd>Function to wrap plaintext into ciphertext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_SANSE_Initialize().
+@param  plaintext       Pointer to plaintext data to wrap.
+@param  ciphertext      Pointer to buffer where the full wrapped data will be stored.
+The ciphertext buffer must not overlap plaintext.
+@param  dataBitLen      The size of the plaintext/ciphertext data.
+@param  AD              Pointer to the Associated Data.
+@param  ADBitLen        The number of bytes provided in the Associated Data.
+@param  tag             The buffer where to store the tag.
+This buffer must be minimum Kravatte_SANSE_TagLength bytes long.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_WBCAE_Decipher.html" title="fn xkcp_sys::Kravatte_WBCAE_Decipher">Kravatte_<wbr>WBCAE_<wbr>Decipher</a><sup title="unsafe function">⚠</sup></dt><dd>Function to decipher ciphertext into plaintext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_WBC_Initialize().
+@param  ciphertext      Pointer to ciphertext data to decipher.
+Ciphertext is ::Kravatte_WBCAE_t bits longer than plaintext.
+@param  plaintext       Pointer to buffer where the deciphered data will be stored.
+The plaintext buffer must not overlap ciphertext.
+@param  dataBitLen      The size in bits of the plaintext data.
+Ciphertext and plaintext buffers must be ::Kravatte_WBCAE_t bits longer than dataBitLen.
+@param  AD              Pointer to the metadata AD.
+@param  ADBitLen        The number of bits provided in the metadata.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_WBCAE_Encipher.html" title="fn xkcp_sys::Kravatte_WBCAE_Encipher">Kravatte_<wbr>WBCAE_<wbr>Encipher</a><sup title="unsafe function">⚠</sup></dt><dd>Function to encipher plaintext into ciphertext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_WBC_Initialize().
+@param  plaintext       Pointer to plaintext data to encipher.
+The last ::Kravatte_WBCAE_t bits of the buffer will be overwritten with zeros.
+@param  ciphertext      Pointer to buffer where the enciphered data will be stored.
+The ciphertext buffer must not overlap plaintext.
+Ciphertext will be ::Kravatte_WBCAE_t bits longer than plaintext.
+@param  dataBitLen      The size in bits of the plaintext data.
+Plaintext and ciphertext buffers must be ::Kravatte_WBCAE_t bits longer than dataBitLen.
+@param  AD              Pointer to the metadata AD.
+@param  ADBitLen        The number of bits provided in the metadata.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_WBC_Decipher.html" title="fn xkcp_sys::Kravatte_WBC_Decipher">Kravatte_<wbr>WBC_<wbr>Decipher</a><sup title="unsafe function">⚠</sup></dt><dd>Function to decipher ciphertext into plaintext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_WBC_Initialize().
+@param  ciphertext      Pointer to ciphertext data to decipher.
+@param  plaintext       Pointer to buffer where the deciphered data will be stored.
+The plaintext buffer must not overlap ciphertext.
+@param  dataBitLen      The size in bits of the plaintext/ciphertext data.
+@param  W               Pointer to the tweak W.
+@param  WBitLen         The number of bits provided in the tweak.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Kravatte_WBC_Encipher.html" title="fn xkcp_sys::Kravatte_WBC_Encipher">Kravatte_<wbr>WBC_<wbr>Encipher</a><sup title="unsafe function">⚠</sup></dt><dd>Function to encipher plaintext into ciphertext.
+@param  kvInstance      Pointer to the instance initialized by Kravatte_WBC_Initialize().
+@param  plaintext       Pointer to plaintext data to encipher.
+@param  ciphertext      Pointer to buffer where the enciphered data will be stored.
+The ciphertext buffer must not overlap plaintext.
+@param  dataBitLen      The size in bits of the plaintext/ciphertext data.
+@param  W               Pointer to the tweak W.
+@param  WBitLen         The number of bits provided in the tweak.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash128.html" title="fn xkcp_sys::ParallelHash128">Parallel<wbr>Hash128</a><sup title="unsafe function">⚠</sup></dt><dd>Parallel hash function ParallelHash128, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@param  blockByteLen    Block size (B) in bytes, must be a power of 2.
+The minimum value is 8 in this implementation.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash256.html" title="fn xkcp_sys::ParallelHash256">Parallel<wbr>Hash256</a><sup title="unsafe function">⚠</sup></dt><dd>Parallel hash function ParallelHash256, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@param  blockByteLen    Block size (B) in bytes, must be a power of 2.
+The minimum value is 8 in this implementation.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash128_Final.html" title="fn xkcp_sys::ParallelHash128_Final">Parallel<wbr>Hash128_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling ParallelHash128_Initialize().
+@param  ParallelHashInstance     Pointer to the hash instance initialized by ParallelHash128_Initialize().
+If @a outputBitLen was not 0 in the call to ParallelHash128_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to ParallelHash128_Initialize(), the output bits
+must be extracted using the ParallelHash128_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash128_Initialize.html" title="fn xkcp_sys::ParallelHash128_Initialize">Parallel<wbr>Hash128_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the parallel hash function ParallelHash128 instance used in sequential hashing mode.
+@param  ParallelHashInstance     Pointer to the hash instance to be initialized.
+@param  blockByteLen    Block size (B) in bytes, must be a power of 2.
+The minimum value is 8 in this implementation.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash128_Squeeze.html" title="fn xkcp_sys::ParallelHash128_Squeeze">Parallel<wbr>Hash128_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  ParallelHashInstance    Pointer to the hash instance initialized by ParallelHash128_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    ParallelHash128_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash128_Update.html" title="fn xkcp_sys::ParallelHash128_Update">Parallel<wbr>Hash128_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  ParallelHashInstance     Pointer to the hash instance initialized by ParallelHash128_Initialize().
+@param  input           Pointer to the input data (X).
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash256_Final.html" title="fn xkcp_sys::ParallelHash256_Final">Parallel<wbr>Hash256_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling ParallelHash256_Initialize().
+@param  ParallelHashInstance     Pointer to the hash instance initialized by ParallelHash256_Initialize().
+If @a outputBitLen was not 0 in the call to ParallelHash256_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to ParallelHash256_Initialize(), the output bits
+must be extracted using the ParallelHash256_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash256_Initialize.html" title="fn xkcp_sys::ParallelHash256_Initialize">Parallel<wbr>Hash256_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the parallel hash function ParallelHash256 instance used in sequential hashing mode.
+@param  ParallelHashInstance     Pointer to the hash instance to be initialized.
+@param  blockByteLen    Block size (B) in bytes, must be a power of 2.
+The minimum value is 8 in this implementation.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash256_Squeeze.html" title="fn xkcp_sys::ParallelHash256_Squeeze">Parallel<wbr>Hash256_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  ParallelHashInstance    Pointer to the hash instance initialized by ParallelHash256_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    ParallelHash256_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.ParallelHash256_Update.html" title="fn xkcp_sys::ParallelHash256_Update">Parallel<wbr>Hash256_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  ParallelHashInstance     Pointer to the hash instance initialized by ParallelHash256_Initialize().
+@param  input           Pointer to the input data (X).
+@param  inputBitLen     The number of input bits provided in the input data.
+Only full bytes are supported, length must be a multiple of 8.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHA3_224.html" title="fn xkcp_sys::SHA3_224">SHA3_<wbr>224</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of SHA3-224 [FIPS 202].
+@param  output          Pointer to the output buffer (28 bytes).
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHA3_256.html" title="fn xkcp_sys::SHA3_256">SHA3_<wbr>256</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of SHA3-256 [FIPS 202].
+@param  output          Pointer to the output buffer (32 bytes).
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHA3_384.html" title="fn xkcp_sys::SHA3_384">SHA3_<wbr>384</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of SHA3-384 [FIPS 202].
+@param  output          Pointer to the output buffer (48 bytes).
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHA3_512.html" title="fn xkcp_sys::SHA3_512">SHA3_<wbr>512</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of SHA3-512 [FIPS 202].
+@param  output          Pointer to the output buffer (64 bytes).
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHAKE128.html" title="fn xkcp_sys::SHAKE128">SHAK<wbr>E128</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of the SHAKE128 extendable output function (XOF) [FIPS 202].
+@param  output          Pointer to the output buffer.
+@param  outputByteLen   The desired number of output bytes.
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.SHAKE256.html" title="fn xkcp_sys::SHAKE256">SHAK<wbr>E256</a><sup title="unsafe function">⚠</sup></dt><dd>Implementation of the SHAKE256 extendable output function (XOF) [FIPS 202].
+@param  output          Pointer to the output buffer.
+@param  outputByteLen   The desired number of output bytes.
+@param  input           Pointer to the input message.
+@param  inputByteLen    The length of the input message in bytes.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash128.html" title="fn xkcp_sys::TupleHash128">Tuple<wbr>Hash128</a><sup title="unsafe function">⚠</sup></dt><dd>Tuple hash function TupleHash128, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  tuple            Pointer to an array of tuple elements (X).
+@param  numberOfElements The number of tuple elements provided in the input data.
+@param  output           Pointer to the output buffer.
+@param  outputBitLen     The desired number of output bits (L).
+@param  customization    Pointer to the customization string (S).
+@param  customBitLen     The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash256.html" title="fn xkcp_sys::TupleHash256">Tuple<wbr>Hash256</a><sup title="unsafe function">⚠</sup></dt><dd>Tuple hash function TupleHash256, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  tuple            Pointer to an array of tuple elements (X).
+@param  numberOfElements The number of tuple elements provided in the input data.
+@param  output           Pointer to the output buffer.
+@param  outputBitLen     The desired number of output bits (L).
+@param  customization    Pointer to the customization string (S).
+@param  customBitLen     The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash128_Final.html" title="fn xkcp_sys::TupleHash128_Final">Tuple<wbr>Hash128_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling TupleHash128_Initialize().
+@param  TupleHashInstance     Pointer to the hash instance initialized by TupleHash128_Initialize().
+If @a outputBitLen was not 0 in the call to TupleHash128_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to TupleHash128_Initialize(), the output bits
+must be extracted using the TupleHash128_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash128_Initialize.html" title="fn xkcp_sys::TupleHash128_Initialize">Tuple<wbr>Hash128_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the Tuple hash function TupleHash128 instance used in sequential hashing mode.
+@param  TupleHashInstance     Pointer to the hash instance to be initialized.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash128_Squeeze.html" title="fn xkcp_sys::TupleHash128_Squeeze">Tuple<wbr>Hash128_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  TupleHashInstance    Pointer to the hash instance initialized by TupleHash128_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    TupleHash128_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash128_Update.html" title="fn xkcp_sys::TupleHash128_Update">Tuple<wbr>Hash128_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  TupleHashInstance     Pointer to the hash instance initialized by TupleHash128_Initialize().
+@param  tuple            Pointer to an array of tuple elements (X).
+@param  numberOfElements The number of tuple elements provided in the input data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash256_Final.html" title="fn xkcp_sys::TupleHash256_Final">Tuple<wbr>Hash256_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling TupleHash256_Initialize().
+@param  TupleHashInstance     Pointer to the hash instance initialized by TupleHash256_Initialize().
+If @a outputBitLen was not 0 in the call to TupleHash256_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to TupleHash256_Initialize(), the output bits
+must be extracted using the TupleHash256_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash256_Initialize.html" title="fn xkcp_sys::TupleHash256_Initialize">Tuple<wbr>Hash256_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the Tuple hash function TupleHash256 instance used in sequential hashing mode.
+@param  TupleHashInstance     Pointer to the hash instance to be initialized.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash256_Squeeze.html" title="fn xkcp_sys::TupleHash256_Squeeze">Tuple<wbr>Hash256_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  TupleHashInstance    Pointer to the hash instance initialized by TupleHash256_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    TupleHash256_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TupleHash256_Update.html" title="fn xkcp_sys::TupleHash256_Update">Tuple<wbr>Hash256_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  TupleHashInstance     Pointer to the hash instance initialized by TupleHash256_Initialize().
+@param  tuple            Pointer to an array of tuple elements (X).
+@param  numberOfElements The number of tuple elements provided in the input data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.TurboSHAKE.html" title="fn xkcp_sys::TurboSHAKE">TurboSHAKE</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.TurboSHAKE_Absorb.html" title="fn xkcp_sys::TurboSHAKE_Absorb">TurboSHAKE_<wbr>Absorb</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.TurboSHAKE_AbsorbDomainSeparationByte.html" title="fn xkcp_sys::TurboSHAKE_AbsorbDomainSeparationByte">TurboSHAKE_<wbr>Absorb<wbr>Domain<wbr>Separation<wbr>Byte</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.TurboSHAKE_Initialize.html" title="fn xkcp_sys::TurboSHAKE_Initialize">TurboSHAKE_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.TurboSHAKE_Squeeze.html" title="fn xkcp_sys::TurboSHAKE_Squeeze">TurboSHAKE_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Vatte.html" title="fn xkcp_sys::Vatte">Vatte</a><sup title="unsafe function">⚠</sup></dt><dd>Function to expand output data.
+@param  kvInstance      Pointer to the hash instance initialized by Kravatte_MaskDerivation().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+This must be a multiple of 8 if KRAVATTE_FLAG_LAST_PART flag not set.
+@param  flags           Bitwise or combination of KRAVATTE_FLAG_NONE, KRAVATTE_FLAG_SHORT, KRAVATTE_FLAG_LAST_PART.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.Xoodoo_AddBytes.html" title="fn xkcp_sys::Xoodoo_AddBytes">Xoodoo_<wbr>AddBytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_ExtractAndAddBytes.html" title="fn xkcp_sys::Xoodoo_ExtractAndAddBytes">Xoodoo_<wbr>Extract<wbr>AndAdd<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_ExtractBytes.html" title="fn xkcp_sys::Xoodoo_ExtractBytes">Xoodoo_<wbr>Extract<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_Initialize.html" title="fn xkcp_sys::Xoodoo_Initialize">Xoodoo_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_OverwriteBytes.html" title="fn xkcp_sys::Xoodoo_OverwriteBytes">Xoodoo_<wbr>Overwrite<wbr>Bytes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_OverwriteWithZeroes.html" title="fn xkcp_sys::Xoodoo_OverwriteWithZeroes">Xoodoo_<wbr>Overwrite<wbr>With<wbr>Zeroes</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_Permute_6rounds.html" title="fn xkcp_sys::Xoodoo_Permute_6rounds">Xoodoo_<wbr>Permute_<wbr>6rounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_Permute_12rounds.html" title="fn xkcp_sys::Xoodoo_Permute_12rounds">Xoodoo_<wbr>Permute_<wbr>12rounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodoo_Permute_Nrounds.html" title="fn xkcp_sys::Xoodoo_Permute_Nrounds">Xoodoo_<wbr>Permute_<wbr>Nrounds</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Absorb.html" title="fn xkcp_sys::Xoodyak_Absorb">Xoodyak_<wbr>Absorb</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_AbsorbHashFullBlocks.html" title="fn xkcp_sys::Xoodyak_AbsorbHashFullBlocks">Xoodyak_<wbr>Absorb<wbr>Hash<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_AbsorbKeyedFullBlocks.html" title="fn xkcp_sys::Xoodyak_AbsorbKeyedFullBlocks">Xoodyak_<wbr>Absorb<wbr>Keyed<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Decrypt.html" title="fn xkcp_sys::Xoodyak_Decrypt">Xoodyak_<wbr>Decrypt</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_DecryptFullBlocks.html" title="fn xkcp_sys::Xoodyak_DecryptFullBlocks">Xoodyak_<wbr>Decrypt<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Encrypt.html" title="fn xkcp_sys::Xoodyak_Encrypt">Xoodyak_<wbr>Encrypt</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_EncryptFullBlocks.html" title="fn xkcp_sys::Xoodyak_EncryptFullBlocks">Xoodyak_<wbr>Encrypt<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Initialize.html" title="fn xkcp_sys::Xoodyak_Initialize">Xoodyak_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Ratchet.html" title="fn xkcp_sys::Xoodyak_Ratchet">Xoodyak_<wbr>Ratchet</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_Squeeze.html" title="fn xkcp_sys::Xoodyak_Squeeze">Xoodyak_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_SqueezeHashFullBlocks.html" title="fn xkcp_sys::Xoodyak_SqueezeHashFullBlocks">Xoodyak_<wbr>Squeeze<wbr>Hash<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_SqueezeKey.html" title="fn xkcp_sys::Xoodyak_SqueezeKey">Xoodyak_<wbr>Squeeze<wbr>Key</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.Xoodyak_SqueezeKeyedFullBlocks.html" title="fn xkcp_sys::Xoodyak_SqueezeKeyedFullBlocks">Xoodyak_<wbr>Squeeze<wbr>Keyed<wbr>Full<wbr>Blocks</a><sup title="unsafe function">⚠</sup></dt><dt><a class="fn" href="fn.cSHAKE128.html" title="fn xkcp_sys::cSHAKE128">cSHAK<wbr>E128</a><sup title="unsafe function">⚠</sup></dt><dd>cSHAKE128 function, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The length of the input message in bits.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  name            Pointer to the function name string (N).
+@param  nameBitLen      The length of the function name in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE256.html" title="fn xkcp_sys::cSHAKE256">cSHAK<wbr>E256</a><sup title="unsafe function">⚠</sup></dt><dd>cSHAKE256 function, as defined in NIST’s Special Publication 800-185,
+published December 2016.
+@param  input           Pointer to the input message (X).
+@param  inputBitLen     The length of the input message in bits.
+@param  output          Pointer to the output buffer.
+@param  outputBitLen    The desired number of output bits (L).
+@param  name            Pointer to the function name string (N).
+@param  nameBitLen      The length of the function name in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE128_Final.html" title="fn xkcp_sys::cSHAKE128_Final">cSHAK<wbr>E128_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling cSHAKE128_Initialize().
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE128_Initialize().
+If @a outputBitLen was not 0 in the call to cSHAKE128_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to cSHAKE128_Initialize(), the output bits
+must be extracted using the cSHAKE128_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE128_Initialize.html" title="fn xkcp_sys::cSHAKE128_Initialize">cSHAK<wbr>E128_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the cSHAKE128 instance used in sequential hashing mode.
+@param  cskInstance     Pointer to the hash instance to be initialized.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  name            Pointer to the function name string (N).
+@param  nameBitLen      The length of the function name in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE128_Squeeze.html" title="fn xkcp_sys::cSHAKE128_Squeeze">cSHAK<wbr>E128_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE128_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    cSHAKE128_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE128_Update.html" title="fn xkcp_sys::cSHAKE128_Update">cSHAK<wbr>E128_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE128_Initialize().
+@param  input           Pointer to the input data.
+@param  inputBitLen     The number of input bits provided in the input data.
+Only the last update call can input a partial byte, other calls must have a length multiple of 8.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE256_Final.html" title="fn xkcp_sys::cSHAKE256_Final">cSHAK<wbr>E256_<wbr>Final</a><sup title="unsafe function">⚠</sup></dt><dd>Function to call after all input blocks have been input and to get
+output bits if the length was specified when calling cSHAKE256_Initialize().
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE256_Initialize().
+If @a outputBitLen was not 0 in the call to cSHAKE256_Initialize(), the number of
+output bits is equal to @a outputBitLen.
+If @a outputBitLen was 0 in the call to cSHAKE256_Initialize(), the output bits
+must be extracted using the cSHAKE256_Squeeze() function.
+@param  output          Pointer to the buffer where to store the output data.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE256_Initialize.html" title="fn xkcp_sys::cSHAKE256_Initialize">cSHAK<wbr>E256_<wbr>Initialize</a><sup title="unsafe function">⚠</sup></dt><dd>Function to initialize the cSHAKE256 instance used in sequential hashing mode.
+@param  cskInstance     Pointer to the hash instance to be initialized.
+@param  outputBitLen    The desired number of output bits (L).
+or 0 for an arbitrarily-long output (XOF).
+@param  name            Pointer to the function name string (N).
+@param  nameBitLen      The length of the function name in bits.
+Only full bytes are supported, length must be a multiple of 8.
+@param  customization   Pointer to the customization string (S).
+@param  customBitLen    The length of the customization string in bits.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE256_Squeeze.html" title="fn xkcp_sys::cSHAKE256_Squeeze">cSHAK<wbr>E256_<wbr>Squeeze</a><sup title="unsafe function">⚠</sup></dt><dd>Function to squeeze output data.
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE256_Initialize().
+@param  output          Pointer to the buffer where to store the output data.
+@param  outputBitLen    The number of output bits desired.
+Only the last squeeze call can output a partial byte,
+other calls must have a length multiple of 8.
+@pre    cSHAKE256_Final() must have been already called.
+@return 0 if successful, 1 otherwise.</dd><dt><a class="fn" href="fn.cSHAKE256_Update.html" title="fn xkcp_sys::cSHAKE256_Update">cSHAK<wbr>E256_<wbr>Update</a><sup title="unsafe function">⚠</sup></dt><dd>Function to give input data to be absorbed.
+@param  cskInstance     Pointer to the hash instance initialized by cSHAKE256_Initialize().
+@param  input           Pointer to the input data.
+@param  inputBitLen     The number of input bits provided in the input data.
+Only the last update call can input a partial byte, other calls must have a length multiple of 8.
+@return 0 if successful, 1 otherwise.</dd></dl><h2 id="types" class="section-header">Type Aliases<a href="#types" class="anchor">§</a></h2><dl class="item-table"><dt><a class="type" href="type.BitLength.html" title="type xkcp_sys::BitLength">BitLength</a></dt><dt><a class="type" href="type.BitSequence.html" title="type xkcp_sys::BitSequence">BitSequence</a></dt><dt><a class="type" href="type.KeccakP1600_state.html" title="type xkcp_sys::KeccakP1600_state">Keccak<wbr>P1600_<wbr>state</a></dt><dt><a class="type" href="type.KeccakWidth1600_DuplexInstance.html" title="type xkcp_sys::KeccakWidth1600_DuplexInstance">Keccak<wbr>Width1600_<wbr>Duplex<wbr>Instance</a></dt><dt><a class="type" href="type.KeccakWidth1600_SpongeInstance.html" title="type xkcp_sys::KeccakWidth1600_SpongeInstance">Keccak<wbr>Width1600_<wbr>Sponge<wbr>Instance</a></dt><dt><a class="type" href="type.KeccakWidth1600_SpongePRG_Instance.html" title="type xkcp_sys::KeccakWidth1600_SpongePRG_Instance">Keccak<wbr>Width1600_<wbr>SpongePRG_<wbr>Instance</a></dt><dt><a class="type" href="type.TurboSHAKE_Instance.html" title="type xkcp_sys::TurboSHAKE_Instance">TurboSHAKE_<wbr>Instance</a></dt><dt><a class="type" href="type.TurboSHAKE_SpongeInstance.html" title="type xkcp_sys::TurboSHAKE_SpongeInstance">TurboSHAKE_<wbr>Sponge<wbr>Instance</a></dt><dt><a class="type" href="type.Xoodoo_state.html" title="type xkcp_sys::Xoodoo_state">Xoodoo_<wbr>state</a></dt><dd>For the documentation, see SnP-documentation.h.</dd><dt><a class="type" href="type.Xoodyak_Instance.html" title="type xkcp_sys::Xoodyak_Instance">Xoodyak_<wbr>Instance</a></dt><dt><a class="type" href="type.tXoodooLane.html" title="type xkcp_sys::tXoodooLane">tXoodoo<wbr>Lane</a></dt></dl></section></div></main></body></html>
