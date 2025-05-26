@@ -25,9 +25,7 @@ license.workspace = true
 repository.workspace = true
 
 [build-dependencies]
-bindgen = { version = "0.71", default-features = false, features = [
-    "prettyplease",
-] }
+bindgen = "0.71"
 cc = "1"
 
 [features]
