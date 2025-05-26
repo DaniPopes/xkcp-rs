@@ -15,6 +15,9 @@ impl Clone for KeccakHash {
         Self {
             inner: Keccak_HashInstance {
                 sponge: ffi::KeccakWidth1600_SpongeInstanceStruct {
+                    state: ffi::KeccakP1600_plain64_state {
+                        ..self.inner.sponge.state
+                    },
                     ..self.inner.sponge
                 },
                 ..self.inner

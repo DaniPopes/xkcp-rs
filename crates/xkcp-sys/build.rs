@@ -80,7 +80,7 @@ fn main() {
     }
 
     builder = builder
-        .formatter(bindgen::Formatter::Prettyplease)
+        .formatter(bindgen::Formatter::Rustfmt)
         .use_core()
         .derive_copy(false)
         .size_t_is_usize(true)
@@ -138,7 +138,7 @@ fn xkcp_target_from_cargo() -> &'static str {
     let target_features = maybe_env("CARGO_CFG_TARGET_FEATURE").unwrap_or_default();
     let target_features = target_features.split(',').collect::<Vec<_>>();
     eprintln!("target features: {target_features:?}");
-    let feature = |s: &str| target_features.iter().any(|&f| f == s);
+    let feature = |s: &str| target_features.contains(&s);
     match target_arch.as_str() {
         "x86_64" => {
             if feature("avx512f") {

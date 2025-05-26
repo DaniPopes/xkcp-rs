@@ -25,7 +25,7 @@ license.workspace = true
 repository.workspace = true
 
 [build-dependencies]
-bindgen = "0.68"
+bindgen = { version = "0.71", default-features = false }
 cc = "1"
 
 [features]

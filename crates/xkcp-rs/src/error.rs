@@ -31,7 +31,7 @@ impl Error {
     pub fn from_raw(raw: ffi::HashReturn) -> Result<()> {
         match raw {
             ffi::HashReturn::KECCAK_SUCCESS => Ok(()),
-            ffi::HashReturn::KECCAK_FAIL => Err(Error::OutputTooSmall),
+            ffi::HashReturn::KECCAK_FAIL => Err(Error::Fail),
             ffi::HashReturn::KECCAK_BAD_HASHLEN => Err(Error::OutputTooSmall),
         }
     }
