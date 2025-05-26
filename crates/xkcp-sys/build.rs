@@ -80,7 +80,7 @@ fn main() {
     }
 
     builder = builder
-        .formatter(bindgen::Formatter::Rustfmt)
+        .formatter(bindgen::Formatter::Prettyplease)
         .use_core()
         .derive_copy(false)
         .size_t_is_usize(true)
